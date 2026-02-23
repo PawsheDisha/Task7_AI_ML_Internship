@@ -40,19 +40,40 @@ For visualization purposes, only the first two features are used.
 
 ## ⚙️ Project Workflow
 
-### 1️⃣ Import Libraries
-Load required libraries: NumPy, Matplotlib, Scikit-learn.
+### 1. Data Preparation
 
-### 2️⃣ Load Dataset
-Load dataset using:
-```python
-from sklearn import datasets
-data = datasets.load_breast_cancer()
+* Imported the dataset for binary classification.
+* Performed preprocessing such as handling missing values and encoding.
+* Split the data into training and testing sets.
+* Applied feature scaling to standardize input variables.
 
-### 3️⃣ Select Features for 2D Visualization
+### 2. Model Training
 
-For visualization of decision boundary, we select only the first two features:
+* Implemented SVM with:
 
-```python
-X = data.data[:, :2]
-y = data.target
+  * **Linear Kernel**
+  * **RBF Kernel**
+* Trained both models and compared their classification results.
+
+### 3. Decision Boundary Visualization
+
+* Reduced data to 2D (if required) for visualization.
+* Plotted decision regions to understand how SVM separates classes.
+* Observed margin maximization and support vectors.
+
+### 4. Hyperparameter Optimization
+
+* Experimented with different values of:
+
+  * **C** (controls regularization strength)
+  * **gamma** (controls influence of data points in RBF)
+* Selected optimal parameters based on performance.
+
+### 5. Model Evaluation
+
+* Evaluated models using:
+
+  * Accuracy Score
+  * Cross-Validation
+* Compared performance of linear and RBF kernels.
+
